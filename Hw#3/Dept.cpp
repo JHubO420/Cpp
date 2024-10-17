@@ -7,19 +7,19 @@ class Dept {
 	int size;
 	int* scores;
 public:
-	Dept(int size) {//»ı¼ºÀÚ
+	Dept(int size) {//ìƒì„±ì
 		this->size = size;
 		scores = new int[size];
 	}
 	Dept(const Dept& dept);
-	~Dept();//¼Ò¸êÀÚ
+	~Dept();//ì†Œë©¸ì
 	int getSize() { return size; }
-	void read();//ÀÔ·Â¹Ş±â
-	bool isOver60(int index);//60Á¡ ÀÌ»óÀÎÁö È®ÀÎ
+	void read();//ì…ë ¥ë°›ê¸°
+	bool isOver60(int index);//60ì  ì´ìƒì¸ì§€ í™•ì¸
 };
 
 void Dept::read() {
-	cout << "10°³ Á¡¼ö ÀÔ·Â>>";
+	cout << "10ê°œ ì ìˆ˜ ì…ë ¥>>";
 	for (int i = 0; i < size; i++) {
 		cin >> scores[i];
 	}
@@ -57,10 +57,10 @@ int countPass(Dept dept) {
 
 int main() {
 	Dept com(10);
-	com.read();//ÀÔ·Â¹Ş±â
-	int n = countPass(com);//º¹»ç Àû¿ë
-	cout << "60Á¡ ÀÌ»óÀº " << n << "¸í" << endl;
+	com.read();//ì…ë ¥ë°›ê¸°
+	int n = countPass(com);//ë³µì‚¬ ì ìš©
+	cout << "60ì  ì´ìƒì€ " << n << "ëª…" << endl;
 }
 
-//¹®Á¦ ÀÔ·ÂÀº Á¦´ë·Î ÀüºÎ µé¾î°£´Ù 
-//ÇÏÁö¸¸ 60Á¡ ÀÌ»óÀÎÁö ¾Æ´ÑÁö¸¦ ÆÇ´ÜÀ» ¸øÇÔ
+//ë¬¸ì œ ì…ë ¥ì€ ì œëŒ€ë¡œ ì „ë¶€ ë“¤ì–´ê°„ë‹¤ 
+//í•˜ì§€ë§Œ 60ì  ì´ìƒì¸ì§€ ì•„ë‹Œì§€ë¥¼ íŒë‹¨ì„ ëª»í•¨
