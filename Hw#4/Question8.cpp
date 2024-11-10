@@ -134,4 +134,6 @@ int main() {
 		}
 
 	}
+	delete ink;
+	delete laser;
 }
