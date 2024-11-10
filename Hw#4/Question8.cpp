@@ -91,14 +91,14 @@ public:
 
 
 int main() {
-	Ink ink("Officejet v40","HP", 5, 10);
-	Laser laser("SCX-6x45", "삼성전자", 3, 20);
+	Ink* ink = new Ink("Officejet v40","HP", 5, 10);
+	Laser* laser = new Laser("SCX-6x45", "삼성전자", 3, 20);
 
 	cout << "현재 작동중인 2 대의 프린터는 아래와 같다" << endl;
 	cout << "잉크젯 : ";
-	ink.show();
+	ink->show();
 	cout << "레이저 : ";
-	laser.show();
+	laser->show();
 
 	char chek = 'y';
 	int type, num;
@@ -109,21 +109,21 @@ int main() {
 			cout << "프린터(1:잉크젯, 2:레이저)와 매수 입력>>";
 			cin >> type >> num;
 			if (type == 1) {
-				if (ink.printInkJek(num)) {
+				if (ink->printInkJek(num)) {
 					cout << "프린트하였습니다." << endl;
 				}
-				ink.show();
-				laser.show();
+				ink->show();
+				laser->show();
 				cout << "계속 프린트 하시겠습니까(y/n)>>";
 				cin >> chek;
 				continue;
 			}
 			else if(type == 2){
-				if (laser.printInkLaser(num)) {
+				if (laser->printInkLaser(num)) {
 					cout << "프린트하였습니다." << endl;
 				}
-				ink.show();
-				laser.show();
+				ink->show();
+				laser->show();
 				cout << "계속 프린트 하시겠습니까(y/n)>>";
 				cin >> chek;
 				continue;
